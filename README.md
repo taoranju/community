@@ -1,9 +1,10 @@
 ## springboot learning
 仿照elastic社区开发一个community
 ## 资料
-https://developer.github.com/apps/
-https://v3.bootcss.com/
-https://spring.io/guides
+[GitHub 社区](https://developer.github.com/apps/)
+[bootstrap 文档](https://v3.bootcss.com/)
+[spring 文档](https://spring.io/guides)
+[OkHttp文档]（https://square.github.io/okhttp/）
 ## 工具
 elastic
 
