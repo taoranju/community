@@ -5,6 +5,7 @@
 [bootstrap 文档](https://v3.bootcss.com/)
 [spring 文档](https://spring.io/guides)
 [OkHttp文档]（https://square.github.io/okhttp/）
+[MyBatis 文档]http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/
 ## 工具
 elastic
 
