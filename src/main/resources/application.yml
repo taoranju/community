@@ -4,3 +4,9 @@ spring:
     password: 123456
     url: jdbc:mysql://192.168.124.7:3307/community
     driver-class-name: com.mysql.cj.jdbc.Driver
+  flyway:
+    clean-disabled: true #禁用clean操作
+    enabled: true #使flyway生效
+    baseline-on-migrate: true #初始化时如果不存在迁移记录表，默认新建一个
+    out-of-order: true #防止开发环境下漏掉没来得及apply的文件，产品环境最好设为false
+    locations: classpath:/db/migration

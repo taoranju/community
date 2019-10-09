@@ -10,6 +10,6 @@
 [flyway](https://flywaydb.org/getstarted/)
 ##
 elastic
-
+flaway:类似于数据库的git
 ## 快捷键
 ALt + 鼠标下拉：处理一列
