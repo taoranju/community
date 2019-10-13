@@ -19,10 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 public class MyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String queryString = request.getQueryString();
-        System.out.println(queryString);
-        request.setAttribute("name","help");
-        System.out.println(request.getParameter("name"));
         return true;
     }
 

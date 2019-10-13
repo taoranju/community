@@ -29,8 +29,8 @@ public class IndexController {
 
     @GetMapping("/hello")
     public String hello(@RequestParam(name = "name") String name, HttpServletRequest request) {
-        String queryString = request.getQueryString();
-        System.out.println(queryString);
+//        String queryString = request.getQueryString();
+//        System.out.println(queryString);
 //        String[] splits = queryString.split("&");
 //        for (String split:splits) {
 //            if(split.contains("name")) {
@@ -39,11 +39,11 @@ public class IndexController {
 //                System.out.println(result);
 //            }
 //        }
-        System.out.println(request.getParameter("name"));
-        Object name1 = request.getAttribute("name");
-        System.out.println(name1);
-        request.setAttribute("name","help");
-        System.out.println(request.getAttribute("name"));
+//        System.out.println(request.getParameter("name"));
+//        Object name1 = request.getAttribute("name");
+//        System.out.println(name1);
+//        request.setAttribute("name","help");
+//        System.out.println(request.getAttribute("name"));
         return "index";
     }
 
