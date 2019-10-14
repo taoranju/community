@@ -8,6 +8,7 @@
 [mybatis文档](http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/)
 [h2](http://www.h2database.com/html/quickstart.html)
 [flyway](https://flywaydb.org/getstarted/)
+[lombok](https://projectlombok.org/)
 ##
 elastic
 flaway:类似于数据库的git
