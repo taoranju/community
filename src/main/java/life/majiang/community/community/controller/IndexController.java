@@ -1,7 +1,11 @@
 package life.majiang.community.community.controller;
 
+import life.majiang.community.community.dto.QuestionDTO;
+import life.majiang.community.community.mapper.QuestionMapper;
 import life.majiang.community.community.mapper.UserMapper;
+import life.majiang.community.community.model.Question;
 import life.majiang.community.community.model.User;
+import life.majiang.community.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * @ProjectName: community
@@ -26,6 +31,9 @@ public class IndexController {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private QuestionService questionService;
 
     @GetMapping("/hello")
     public String hello(@RequestParam(name = "name") String name, HttpServletRequest request) {
@@ -48,7 +56,7 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String index(HttpServletRequest request) {
+    public String index(HttpServletRequest request, Model model) {
 
         Cookie[] cookies = request.getCookies();
         if (cookies != null && cookies.length != 0) {
@@ -63,6 +71,10 @@ public class IndexController {
                 }
             }
         }
+
+        List<QuestionDTO> questionList = questionService.list();
+        model.addAttribute("questions",questionList);
+
         return "index";
     }
 }

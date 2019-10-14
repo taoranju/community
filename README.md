@@ -9,8 +9,9 @@
 [h2](http://www.h2database.com/html/quickstart.html)
 [flyway](https://flywaydb.org/getstarted/)
 [lombok](https://projectlombok.org/)
+[shymeleaf](https://www.thymeleaf.org/index.html)
 ##
 elastic
-flaway:类似于数据库的git
+flyway:类似于数据库的git
 ## 快捷键
 ALt + 鼠标下拉：处理一列
