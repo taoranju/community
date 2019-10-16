@@ -58,8 +58,8 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(HttpServletRequest request, Model model,
-                        @RequestParam(value = "page", defaultValue = "1") Integer page,
-                        @RequestParam(value = "size", defaultValue = "5") Integer size) {
+                        @RequestParam(name = "page", defaultValue = "1") Integer page,
+                        @RequestParam(name = "size", defaultValue = "2") Integer size) {
 
         Cookie[] cookies = request.getCookies();
         if (cookies != null && cookies.length != 0) {
@@ -76,7 +76,7 @@ public class IndexController {
         }
 
         PaginationDTO pagination = questionService.list(page, size);
-        model.addAttribute("questions",pagination);
+        model.addAttribute("pagination",pagination);
 
         return "index";
     }
