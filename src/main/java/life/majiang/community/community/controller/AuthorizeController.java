@@ -42,6 +42,15 @@ public class AuthorizeController {
     @Value("${github.redirect.uri}")
     private String redirectUri;
 
+    /**
+     * 使用okHttp做一个第三方登录链接
+     * 具体流程看github教程
+     * @param code
+     * @param state
+     * @param response
+     * @return
+     * @throws IOException
+     */
     @GetMapping("/callback")
     public String callback(@RequestParam(name = "code") String code,
                            @RequestParam(name = "state") String state,
