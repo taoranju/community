@@ -10,8 +10,14 @@
 [flyway](https://flywaydb.org/getstarted/)
 [lombok](https://projectlombok.org/)
 [shymeleaf](https://www.thymeleaf.org/index.html)
+[mybatis generator](http://mybatis.org/generator/)
 ##
 elastic
 flyway:类似于数据库的git
 ## 快捷键
 ALt + 鼠标下拉：处理一列
+
+## 脚本
+```shell script
+mvn flyway:migrate
+```
