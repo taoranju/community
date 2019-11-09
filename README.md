@@ -20,4 +20,5 @@ ALt + 鼠标下拉：处理一列
 ## 脚本
 ```shell script
 mvn flyway:migrate
+mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ```
