@@ -1,5 +1,6 @@
 package life.majiang.community.community.interceptor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -16,7 +17,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 public class MyConfig implements WebMvcConfigurer {
-    @Bean
+    @Autowired
+    private MyInterceptor myInterceptor;
+
     public WebMvcConfigurer webMvcConfigurer() {
 
         WebMvcConfigurer adapter = new WebMvcConfigurer() {
@@ -27,7 +30,7 @@ public class MyConfig implements WebMvcConfigurer {
             @Override
             public void addInterceptors(InterceptorRegistry registry) {
                 //springboot已经做好了静态资源映射
-                registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**");
+                registry.addInterceptor(myInterceptor).addPathPatterns("/**");
             }
         };
         return adapter;

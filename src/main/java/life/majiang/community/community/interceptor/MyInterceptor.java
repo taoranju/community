@@ -1,5 +1,6 @@
 package life.majiang.community.community.interceptor;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @Version: 1.0
  */
 
+@Component
 public class MyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

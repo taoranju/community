@@ -11,16 +11,23 @@ package life.majiang.community.community.exception;
  */
 public enum  CustomizeErrorCode implements ICustomizeErrorCode {
 
-    QUESTION_NOT_FOUND("你要找的问题不存在");
+    QUESTION_NOT_FOUND(2001,"你要找的问题不存在");
 
     @Override
     public String getMessage() {
         return message;
     }
 
+    @Override
+    public Integer getCode() {
+        return code;
+    }
+
+    private Integer code;
     private String message;
 
-    CustomizeErrorCode(String message) {
+    CustomizeErrorCode(Integer code, String message) {
+        this.code = code;
         this.message = message;
     }
 }
