@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -33,6 +34,7 @@ public class CommentController {
     private CommentService commentService;
 
     @PostMapping("/comment")
+    @ResponseBody
     public Object post(@RequestBody CommentDTO commentDTO,
                        HttpServletRequest request) {
         //TODO 校验传入参数
@@ -45,7 +47,7 @@ public class CommentController {
         comment.setContent(commentDTO.getContent());
         comment.setType(commentDTO.getType());
         comment.setGmtCreate(System.currentTimeMillis());
-        comment.setGmtCreate(System.currentTimeMillis());
+        comment.setGmtModified(System.currentTimeMillis());
         comment.setCommentator(1L);
         comment.setLikeCount(0L);
         commentService.insert(comment);
