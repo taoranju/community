@@ -42,7 +42,7 @@ public class CommentService {
     private UserMapper userMapper;
 
     @Transactional
-    public void insert(Comment comment) {
+    public void     insert(Comment comment) {
         if (comment.getParentId() == null || comment.getParentId() == 0) {
             throw new CustomizeException(CustomizeErrorCode.TARGET_PARAM_NOT_FOUND);
         }
@@ -75,6 +75,7 @@ public class CommentService {
         commentExample.createCriteria()
                 .andParentIdEqualTo(id)
                 .andTypeEqualTo(CommentTypeEnum.QUESTION.getType());
+        commentExample.setOrderByClause("gmt_create desc");
         List<Comment> comments = commentMapper.selectByExample(commentExample);
         if (comments.size() == 0) {
             return new ArrayList<>();
